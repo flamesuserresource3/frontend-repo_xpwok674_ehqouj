@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import MapBanner from './components/MapBanner';
+import ProgressGauge from './components/ProgressGauge';
+import ExpeditionForm from './components/ExpeditionForm';
+import KanbanBoard from './components/KanbanBoard';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div
+      className="min-h-screen w-full"
+      style={{
+        backgroundImage:
+          'linear-gradient(0deg, rgba(245, 222, 179, 0.75), rgba(245, 222, 179, 0.75)), url(https://images.unsplash.com/photo-1502920917128-1aa500764cbd?q=80&w=1742&auto=format&fit=crop)',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+        <MapBanner />
+
+        <div className="mt-6 grid gap-4">
+          <ProgressGauge />
+          <ExpeditionForm />
+          <KanbanBoard />
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default App
